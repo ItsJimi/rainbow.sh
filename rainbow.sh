@@ -1,15 +1,13 @@
 #!/bin/sh
 
-color1="\033["
-color2=41
-color3="m"
+number=41
 
-while [ $color2 -lt 48 ]
+while [ $number -lt 48 ]
 do
-	color=$color1$color2$color3
+	color="\033["$number"m"
 	echo $color
-	color2=`expr $color2 + 1`
-	if [ $color2 -eq 47 ]
-		then color2=41
+	number=`expr $number + 1`
+	if [ $number -eq 47 ]
+		then number=41
 	fi
 done
